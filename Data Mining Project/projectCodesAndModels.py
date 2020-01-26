@@ -38,7 +38,7 @@ X_train = sc.fit_transform(x_train)
 X_test = sc.transform(x_test)
 xClassless = sc.transform(xClassless)
 
-# KNN
+# creating KNN model
 from sklearn.neighbors import KNeighborsClassifier
 
 knn = KNeighborsClassifier(n_neighbors=15, metric='manhattan')
@@ -57,7 +57,7 @@ print("\nKNN predicts for classless datas: ")
 print(" ID = 24: "+predClassless[0] + ", ID = 44: "+predClassless[1] + ", ID = 54: "+predClassless[2]+"\n")
 
 
-# Desicion Tree
+# creating Desicion Tree model
 from sklearn import tree
 dtc = tree.DecisionTreeClassifier(criterion="entropy")
 dtc.fit(X_train, y_train)  # Training
@@ -73,7 +73,7 @@ print(cm)
 print("\nDSCTREE predicts for classless datas: ")
 print(" ID = 24: "+predClassless[0] + ", ID = 44: "+predClassless[1] + ", ID = 54: "+predClassless[2]+"\n")
 
-# Neural Network Models Multi-layer Perceptron
+# creating Neural Network Models Multi-layer Perceptron
 from sklearn.neural_network import MLPClassifier
 mlp = MLPClassifier(solver='lbfgs', alpha=1e-5)
 mlp.fit(X_train, y_train)  # Training
